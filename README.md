@@ -78,6 +78,7 @@ personal_blog/
 1. **Run the application**:
    ```bash
    python run.py
+   python -m flask --app flaskr run --debug
    ```
 
 2. **Access the blog**:
@@ -109,13 +110,13 @@ personal_blog/
 - Use a database (e.g., PostgreSQL) for persistent storage.
 - Implement a search functionality for articles.
 
-## License
+## Project Link
+[Project URL](https://roadmap.sh/projects/personal-blog)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
 - [Flask](https://flask.palletsprojects.com/) - The web framework used for building the blog.
 - [Markdown](https://daringfireball.net/projects/markdown/) - For formatting the README file.
-```
+
 
