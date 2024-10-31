@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Personal Blog</h1>
+<!-- Search Input -->
+<input type="text" id="search" placeholder="Search blog..." onkeyup="searchArticles()">
+<!-- Articles List -->
+<ul id="articles-list">
+    {% for article in articles %}
+    <li class="article" data-title="{{ article['title'] }}">
+        <a href="{{ url_for('blog.article', id=article['id']) }}">{{ article['title'] }}</a>  
+        <span>{{ article['date'] }}</span>
+    </li>
+    {% endfor %}
+</ul>
+<script>
+    function searchArticles() {
+        const input = document.getElementById('search');
+        const filter = input.value.toLowerCase();
+        const articles = document.querySelectorAll('#articles-list .article');
+    
+        articles.forEach(article => {
+            const title = article.getAttribute('data-title').toLowerCase();
+            if (title.includes(filter)) {
+                article.style.display = ''; // Show article
+            } else {
+                article.style.display = 'none'; // Hide article
+            }
+        });
+    }
+    </script>
+{% endblock %}
